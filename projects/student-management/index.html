@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduManage Student Dashboard — Gundeti Bhanuteja</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="../../index.html#projects" class="back-btn"><i data-lucide="arrow-left"></i> Portfolio</a>
+        <h2>EduManage</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active"><i data-lucide="layout-dashboard"></i> Dashboard</button>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="themeToggle" class="theme-btn"><i data-lucide="moon"></i> Toggle Theme</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="dashboard-header">
+        <div>
+          <h1>Student Dashboard</h1>
+          <p>System database status and student registration records.</p>
+        </div>
+        <button id="addStudentBtn" class="btn btn-primary"><i data-lucide="plus-circle"></i> Add Student</button>
+      </header>
+
+      <!-- Stats Cards -->
+      <section class="stats-overview">
+        <div class="stat-card glass-card">
+          <div class="stat-icon icon-blue"><i data-lucide="users"></i></div>
+          <div class="stat-data">
+            <span class="stat-label">Total Students</span>
+            <span class="stat-number" id="statTotal">0</span>
+          </div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-icon icon-green"><i data-lucide="book-open"></i></div>
+          <div class="stat-data">
+            <span class="stat-label">Active Courses</span>
+            <span class="stat-number" id="statCourses">3</span>
+          </div>
+        </div>
+        <div class="stat-card glass-card">
+          <div class="stat-icon icon-purple"><i data-lucide="award"></i></div>
+          <div class="stat-data">
+            <span class="stat-label">Passed Ratio</span>
+            <span class="stat-number" id="statRatio">100%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Students Table section -->
+      <section class="table-section glass-card">
+        <div class="table-actions">
+          <div class="search-box">
+            <i data-lucide="search"></i>
+            <input type="text" id="searchStudent" placeholder="Search by name, roll, or course..." />
+          </div>
+          <div class="filter-box">
+            <select id="courseFilter">
+              <option value="all">All Courses</option>
+              <option value="bca">BCA</option>
+              <option value="bsc">B.Sc Computer Science</option>
+              <option value="btech">B.Tech IT</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="students-table">
+            <thead>
+              <tr>
+                <th>Roll Number</th>
+                <th>Full Name</th>
+                <th>Course</th>
+                <th>Email Address</th>
+                <th>Admission Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentsTableBody">
+              <!-- Render table rows dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Form Modal Overlay -->
+  <div class="modal-overlay" id="studentModal" style="display: none;">
+    <div class="modal-card glass-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Register Student</h3>
+        <button id="closeModal" class="btn-close">&times;</button>
+      </div>
+      <form id="studentForm">
+        <input type="hidden" id="editStudentId" />
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="rollNo">Roll Number</label>
+            <input type="text" id="rollNo" placeholder="e.g. SU-2025-104" required />
+          </div>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter full name" required />
+          </div>
+          <div class="form-group">
+            <label for="studentCourse">Course</label>
+            <select id="studentCourse" required>
+              <option value="bca">BCA</option>
+              <option value="bsc">B.Sc Computer Science</option>
+              <option value="btech">B.Tech IT</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="studentEmail">Email Address</label>
+            <input type="email" id="studentEmail" placeholder="student@university.com" required />
+          </div>
+          <div class="form-group">
+            <label for="admissionDate">Admission Date</label>
+            <input type="date" id="admissionDate" required />
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="cancelForm" class="btn btn-secondary">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

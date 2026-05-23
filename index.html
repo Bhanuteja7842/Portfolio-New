@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gundeti Bhanuteja | Portfolio — BCA Student, Fullstack Developer & Ethical Hacking</title>
+  <meta name="description" content="Portfolio of Gundeti Bhanuteja — BCA Student, Fullstack Developer, and Ethical Hacking Enthusiast. Explore projects, skills, education, and get in touch." />
+  <meta name="keywords" content="Gundeti Bhanuteja, Bhanuteja, Portfolio, Web Developer, Fullstack, Ethical Hacking, BCA, Python, JavaScript, Java, React" />
+  <meta name="author" content="Gundeti Bhanuteja" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading<span class="loader-dots"></span></p>
+    </div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Gundeti <span class="logo-highlight">Bhanuteja</span><span class="logo-bracket"> /&gt;</span>
+      </a>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#education" class="nav-link" data-section="education">Education</a>
+        <a href="#certificates" class="nav-link" data-section="certificates">Certificates</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i data-lucide="sun" class="theme-icon sun-icon"></i>
+          <i data-lucide="moon" class="theme-icon moon-icon"></i>
+        </button>
+        <a href="#contact" class="nav-cta">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-effects">
+        <canvas id="coding-bg"></canvas>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Available for opportunities
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Gundeti Bhanuteja</span>
+          </h1>
+          <p class="hero-subtitle">
+            I'm a <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+          </p>
+          <p class="hero-description">
+            A motivated and detail-oriented Bachelor of Computer Applications (BCA) student at KIMS Degree & PG College, Karimnagar, specializing in secure Fullstack Development and Ethical Hacking.
+          </p>
+          <div class="hero-buttons">
+            <a href="https://drive.google.com/file/d/1O1Uc_CR_pdMlrLO2e668PtPqEpncA5Ar/view?usp=drive_link" target="_blank" class="btn btn-primary">
+              <i data-lucide="file-text"></i> View Resume
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <i data-lucide="folder-open"></i> View Projects
+            </a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/Bhanuteja7842" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <i data-lucide="github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/gundeti-bhanuteja-b30094388/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a href="mailto:gundetibhanute012@gmail.com" class="social-link" aria-label="Email">
+              <i data-lucide="mail"></i>
+            </a>
+            <a href="https://x.com/imbhanu24nijv" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+              <i data-lucide="twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/code1914581?igsh=eWJkMzN2YzEyc3hs" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <i data-lucide="instagram"></i>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="6">0</span>+
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="12">0</span>+
+              <span class="stat-label">Skills</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="1">0</span>
+              <span class="stat-label">Internship</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-wrapper">
+            <div class="hero-image-glow"></div>
+            <img src="assets/images/profile.jpg" alt="Gundeti Bhanuteja — BCA Student, Fullstack Developer, Ethical Hacking" />
+            <div class="hero-image-ring"></div>
+          </div>
+          <div class="floating-badge floating-badge-1">
+            <i data-lucide="code-2"></i> Web Dev
+          </div>
+          <div class="floating-badge floating-badge-2">
+            <i data-lucide="shield-alert"></i> Cyber Sec
+          </div>
+          <div class="floating-badge floating-badge-3">
+            <i data-lucide="server"></i> Fullstack
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+        <i data-lucide="chevrons-down"></i>
+      </a>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Get To Know Me</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-grid reveal">
+          <div class="about-image">
+            <div class="about-image-card">
+              <img src="assets/images/profile.jpg" alt="Gundeti Bhanuteja" />
+              <div class="about-image-overlay"></div>
+            </div>
+            <div class="about-experience-badge">
+              <span class="exp-number">2+</span>
+              <span class="exp-text">Years of Tech Study</span>
+            </div>
+          </div>
+          <div class="about-content">
+            <h3 class="about-heading">BCA Student & Secure Fullstack Developer</h3>
+            <p class="about-text">
+              I am a motivated and detail-oriented <strong>Bachelor of Computer Applications (BCA)</strong> student at KIMS Degree & PG College, Karimnagar, with a focus on delivering high-performance digital solutions.
+            </p>
+            <p class="about-text">
+              I specialize in bridging the gap between design and technology, combining my skills in <strong>Fullstack Development</strong> and <strong>Ethical Hacking</strong> to build secure, user-centric applications. I am committed to continuous growth in the IT sector and delivering quality work that drives organizational success.
+            </p>
+            <div class="expertise-tags" style="display: flex; gap: 10px; flex-wrap: wrap; margin: 1.5rem 0;">
+              <span class="section-tag" style="background: rgba(99,102,241,0.08); border-color: rgba(99,102,241,0.15); color: var(--text-primary); margin-bottom: 0;"><i data-lucide="code" style="width:14px;height:14px;vertical-align:middle;margin-right:5px;"></i> Web Development</span>
+              <span class="section-tag" style="background: rgba(139,92,246,0.08); border-color: rgba(139,92,246,0.15); color: var(--text-primary); margin-bottom: 0;"><i data-lucide="shield" style="width:14px;height:14px;vertical-align:middle;margin-right:5px;"></i> Ethical Hacking</span>
+              <span class="section-tag" style="background: rgba(236,72,153,0.08); border-color: rgba(236,72,153,0.15); color: var(--text-primary); margin-bottom: 0;"><i data-lucide="palette" style="width:14px;height:14px;vertical-align:middle;margin-right:5px;"></i> UI/UX Design</span>
+              <span class="section-tag" style="background: rgba(34,197,94,0.08); border-color: rgba(34,197,94,0.15); color: var(--text-primary); margin-bottom: 0;"><i data-lucide="lightbulb" style="width:14px;height:14px;vertical-align:middle;margin-right:5px;"></i> Problem Solving</span>
+            </div>
+            <div class="about-info-grid">
+              <div class="about-info-item">
+                <i data-lucide="user"></i>
+                <span><strong>Name:</strong> Gundeti Bhanuteja</span>
+              </div>
+              <div class="about-info-item">
+                <i data-lucide="graduation-cap"></i>
+                <span><strong>Degree:</strong> BCA (2nd Year)</span>
+              </div>
+              <div class="about-info-item">
+                <i data-lucide="map-pin"></i>
+                <span><strong>Location:</strong> Karimnagar, India</span>
+              </div>
+              <div class="about-info-item">
+                <i data-lucide="mail"></i>
+                <span><strong>Email:</strong> gundetibhanute012@gmail.com</span>
+              </div>
+            </div>
+            <a href="https://drive.google.com/file/d/1O1Uc_CR_pdMlrLO2e668PtPqEpncA5Ar/view?usp=drive_link" target="_blank" class="btn btn-primary" style="margin-top:1.5rem;">
+              <i data-lucide="download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">What I Know</span>
+          <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="skills-grid reveal">
+
+          <!-- Programming Languages -->
+          <div class="skill-category glass-card">
+            <div class="skill-category-header">
+              <div class="skill-category-icon"><i data-lucide="terminal"></i></div>
+              <h3>Programming</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>C</span><span class="skill-percent">40%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="40"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>JavaScript</span><span class="skill-percent">30%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="30"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>Python</span><span class="skill-percent">Learning</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="15"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>Java</span><span class="skill-percent">Learning</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="15"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web Technologies -->
+          <div class="skill-category glass-card">
+            <div class="skill-category-header">
+              <div class="skill-category-icon"><i data-lucide="globe"></i></div>
+              <h3>Web Development</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>HTML</span><span class="skill-percent">70%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>CSS</span><span class="skill-percent">50%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>React</span><span class="skill-percent">60%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>Node.js</span><span class="skill-percent">50%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-category glass-card">
+            <div class="skill-category-header">
+              <div class="skill-category-icon"><i data-lucide="database"></i></div>
+              <h3>Databases</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>MySQL</span><span class="skill-percent">65%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>MongoDB</span><span class="skill-percent">55%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-category glass-card">
+            <div class="skill-category-header">
+              <div class="skill-category-icon"><i data-lucide="wrench"></i></div>
+              <h3>Tools & Platforms</h3>
+            </div>
+            <div class="skill-bars">
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>Git & GitHub</span><span class="skill-percent">70%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>VS Code</span><span class="skill-percent">85%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-bar-item">
+                <div class="skill-bar-info"><span>Linux / Bash</span><span class="skill-percent">60%</span></div>
+                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPERIENCE SECTION ========== -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Professional Path</span>
+          <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-date"><i data-lucide="calendar"></i> Sept — Oct 2025</div>
+              <h3>Fullstack Developer Intern</h3>
+              <p class="timeline-institution"><i data-lucide="building-2"></i> Cognifyz Technologies</p>
+              <p>Worked on full-stack features using React and Node.js. Developed reusable UI components, integrated APIs, and improved platform user experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">My Work</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="project-filters reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web Dev</button>
+          <button class="filter-btn" data-filter="ai">AI / ML</button>
+          <button class="filter-btn" data-filter="utility">Utility</button>
+        </div>
+        <div class="projects-grid reveal" id="projectsGrid">
+
+          <!-- Project 1 -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-image">
+              <img src="assets/images/project-sms.png" alt="Student Management System" loading="lazy" />
+              <div class="project-overlay">
+                <a href="projects/student-management/index.html" target="_blank" class="project-overlay-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                <a href="https://github.com/Bhanuteja7842/student-management" target="_blank" class="project-overlay-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Student Management System</h3>
+              <p class="project-desc">A full-featured CRUD application to manage student records, grades, and attendance with a modern dashboard UI.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card glass-card" data-category="utility">
+            <div class="project-image">
+              <img src="assets/images/project-calculator.png" alt="Calculator App" loading="lazy" />
+              <div class="project-overlay">
+                <a href="projects/calculator/index.html" target="_blank" class="project-overlay-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                <a href="https://github.com/Bhanuteja7842/calculator" target="_blank" class="project-overlay-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Calculator App</h3>
+              <p class="project-desc">A sleek, responsive calculator with scientific mode, keyboard support, and a beautiful glassmorphism design.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-image">
+              <img src="assets/images/project-portfolio.png" alt="Portfolio Website" loading="lazy" />
+              <div class="project-overlay">
+                <a href="#hero" class="project-overlay-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                <a href="https://github.com/Bhanuteja7842/Bhanuteja72" target="_blank" class="project-overlay-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Portfolio Website</h3>
+              <p class="project-desc">A modern, animated personal portfolio with dark mode, scroll reveals, glassmorphism, and responsive design.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card glass-card" data-category="utility">
+            <div class="project-image">
+              <img src="assets/images/project-todo.png" alt="To-Do App" loading="lazy" />
+              <div class="project-overlay">
+                <a href="projects/todo/index.html" target="_blank" class="project-overlay-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                <a href="https://github.com/Bhanuteja7842/todo-app" target="_blank" class="project-overlay-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">To-Do App</h3>
+              <p class="project-desc">A productivity to-do list application with priority tagging, category filters, and local storage persistence.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card glass-card" data-category="web">
+            <div class="project-image">
+              <img src="assets/images/project-weather.png" alt="Weather App" loading="lazy" />
+              <div class="project-overlay">
+                <a href="projects/weather/index.html" target="_blank" class="project-overlay-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                <a href="https://github.com/Bhanuteja7842/weather-app" target="_blank" class="project-overlay-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Weather App</h3>
+              <p class="project-desc">A real-time weather dashboard fetching data from APIs, showing forecasts, humidity, wind speed, and beautiful icons.</p>
+              <div class="project-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card glass-card" data-category="ai">
+            <div class="project-image">
+              <img src="assets/images/project-chatbot.png" alt="AI Chatbot" loading="lazy" />
+              <div class="project-overlay">
+                <a href="projects/chatbot/index.html" target="_blank" class="project-overlay-btn" aria-label="Live Demo"><i data-lucide="external-link"></i></a>
+                <a href="https://github.com/Bhanuteja7842/ai-chatbot" target="_blank" class="project-overlay-btn" aria-label="GitHub"><i data-lucide="github"></i></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">AI Chatbot</h3>
+              <p class="project-desc">An intelligent conversational AI chatbot built with Python, natural language processing, and a modern chat interface.</p>
+              <div class="project-tags">
+                <span>Python</span><span>AI/ML</span><span>NLP</span><span>HTML</span><span>CSS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION SECTION ========== -->
+    <section class="section education" id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">My Journey</span>
+          <h2 class="section-title">Education <span class="gradient-text">Timeline</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-date"><i data-lucide="calendar"></i> 2025 — 2028 (Pursuing)</div>
+              <h3>Bachelor of Computer Applications (BCA) — 2nd Year</h3>
+              <p class="timeline-institution"><i data-lucide="building-2"></i> KIMS Degree & PG College, Karimnagar</p>
+              <p>Pursuing Bachelor of Computer Applications (BCA). Learning foundational IT concepts, web technologies, operating systems, and databases. Affiliated with Satavahana University.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-date"><i data-lucide="calendar"></i> 2022 — 2024</div>
+              <h3>Intermediate (MPC)</h3>
+              <p class="timeline-institution"><i data-lucide="building-2"></i> Telangana Minority Residential Junior College</p>
+              <p>Studied Mathematics, Physics, and Chemistry (MPC). Completed higher secondary board exams with an aggregate score of 497.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-date"><i data-lucide="calendar"></i> 2022</div>
+              <h3>Secondary School Certificate (SSC)</h3>
+              <p class="timeline-institution"><i data-lucide="building-2"></i> ZPHS Choppadandi Boys</p>
+              <p>Completed schooling up to 10th Class with an aggregate Grade Point Average (GPA) of 7.2.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CERTIFICATES SECTION ========== -->
+    <section class="section certificates" id="certificates">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Achievements</span>
+          <h2 class="section-title">Certificates & <span class="gradient-text">Awards</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="certificates-grid reveal">
+          <div class="certificate-card glass-card">
+            <div class="cert-icon"><i data-lucide="award"></i></div>
+            <h3>Python Programming</h3>
+            <p>Completed Python programming certification covering OOP, data structures, and scripting.</p>
+            <span class="cert-issuer"><i data-lucide="shield-check"></i> Certified</span>
+          </div>
+          <div class="certificate-card glass-card">
+            <div class="cert-icon"><i data-lucide="award"></i></div>
+            <h3>Web Development</h3>
+            <p>Full-stack web development certification covering HTML, CSS, JavaScript, React, and Node.js.</p>
+            <span class="cert-issuer"><i data-lucide="shield-check"></i> Certified</span>
+          </div>
+          <div class="certificate-card glass-card">
+            <div class="cert-icon"><i data-lucide="award"></i></div>
+            <h3>AI & Machine Learning</h3>
+            <p>Completed certification in AI/ML fundamentals, including supervised learning, neural networks, and NLP.</p>
+            <span class="cert-issuer"><i data-lucide="shield-check"></i> Certified</span>
+          </div>
+          <div class="certificate-card glass-card">
+            <div class="cert-icon"><i data-lucide="shield-alert"></i></div>
+            <h3>Ethical Hacking</h3>
+            <p>Practical cybersecurity certification focused on network security, web application security, and penetration testing.</p>
+            <span class="cert-issuer"><i data-lucide="shield-check"></i> Certified</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RESUME SECTION ========== -->
+    <section class="section resume-section" id="resume">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">My Resume</span>
+          <h2 class="section-title">Download <span class="gradient-text">Resume</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="resume-card glass-card reveal">
+          <div class="resume-icon">
+            <i data-lucide="file-text"></i>
+          </div>
+          <h3>Gundeti Bhanuteja — Resume</h3>
+          <p>Download my latest resume to learn more about my education, experience, skills, and projects.</p>
+          <a href="https://drive.google.com/file/d/1O1Uc_CR_pdMlrLO2e668PtPqEpncA5Ar/view?usp=drive_link" target="_blank" class="btn btn-primary btn-lg">
+            <i data-lucide="download"></i> Download Resume (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="contact-info">
+            <h3>Let's work together</h3>
+            <p>Have a project in mind, or just want to chat? Feel free to reach out. I'm always open to discussing new ideas and opportunities.</p>
+            <div class="contact-details">
+              <div class="contact-detail-item glass-card">
+                <div class="contact-detail-icon"><i data-lucide="mail"></i></div>
+                <div>
+                  <h4>Email</h4>
+                  <a href="mailto:gundetibhanute012@gmail.com">gundetibhanute012@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-detail-item glass-card">
+                <div class="contact-detail-icon"><i data-lucide="phone"></i></div>
+                <div>
+                  <h4>Phone</h4>
+                  <a href="tel:+917842732143">+91 78427 32143</a>
+                </div>
+              </div>
+              <div class="contact-detail-item glass-card">
+                <div class="contact-detail-icon"><i data-lucide="message-square"></i></div>
+                <div>
+                  <h4>WhatsApp</h4>
+                  <a href="https://wa.me/917842732143" target="_blank">+91 78427-32143</a>
+                </div>
+              </div>
+              <div class="contact-detail-item glass-card">
+                <div class="contact-detail-icon"><i data-lucide="map-pin"></i></div>
+                <div>
+                  <h4>Location</h4>
+                  <span>Karimnagar, India</span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-socials">
+              <a href="https://github.com/Bhanuteja7842" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i data-lucide="github"></i></a>
+              <a href="https://www.linkedin.com/in/gundeti-bhanuteja-b30094388/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+              <a href="https://x.com/imbhanu24nijv" target="_blank" rel="noopener" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            </div>
+          </div>
+          <form class="contact-form glass-card" id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <div class="input-wrapper">
+                <i data-lucide="user"></i>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <div class="input-wrapper">
+                <i data-lucide="mail"></i>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <div class="input-wrapper">
+                <i data-lucide="message-square"></i>
+                <input type="text" id="subject" name="subject" placeholder="Project discussion" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <div class="input-wrapper textarea-wrapper">
+                <i data-lucide="pen-line"></i>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-submit">
+              <i data-lucide="send"></i> Send Message
+              <span class="btn-loader"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ADMIN MESSAGES SECTION ========== -->
+    <section class="section messages-inbox" id="messages-inbox">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Admin Console</span>
+          <h2 class="section-title">Received <span class="gradient-text">Messages</span></h2>
+          <div class="section-line"></div>
+        </div>
+        <div id="admin-login" class="admin-login reveal">
+          <p>Enter the admin password to view received site messages.</p>
+          <div class="password-group">
+            <input type="password" id="admin-password" placeholder="Enter Password" />
+            <button id="login-btn" class="btn btn-primary">Unlock Inbox</button>
+          </div>
+          <p id="login-error" class="login-error" style="display: none;">Incorrect password.</p>
+        </div>
+        <div id="admin-content" style="display: none;" class="reveal">
+          <div id="messages-container" class="messages-container"></div>
+          <div class="messages-actions">
+            <button id="logout-btn" class="btn btn-secondary" style="margin-right: 15px;">
+              <i data-lucide="lock"></i> Lock
+            </button>
+            <button id="clear-messages" class="btn btn-secondary">
+              <i data-lucide="trash-2"></i> Clear All
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <a href="#hero" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>Gundeti <span class="logo-highlight">Bhanuteja</span><span class="logo-bracket"> /&gt;</span>
+        </a>
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-socials">
+          <a href="https://github.com/Bhanuteja7842" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="https://www.linkedin.com/in/gundeti-bhanuteja-b30094388/" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:gundetibhanute012@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Gundeti Bhanuteja. All rights reserved.</p>
+        <p>Designed & Built with <span class="heart">&hearts;</span> by Bhanuteja</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Chat Widget -->
+  <div id="chat-widget" class="chat-widget">
+    <div class="chat-header">
+      <h3>Direct Message</h3>
+      <button id="close-chat" class="close-chat">&times;</button>
+    </div>
+    <div class="chat-body">
+      <form id="directMessageForm">
+        <input type="text" id="dm-name" placeholder="Your Name" required />
+        <input type="email" id="dm-email" placeholder="Your Email" required />
+        <textarea id="dm-message" placeholder="Type your message..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 5px;">
+          <i data-lucide="send"></i> Send Message
+        </button>
+      </form>
+      <div id="dm-success" class="dm-success" style="display: none;">
+        <i data-lucide="check-circle" style="color: var(--accent-4);"></i> Sent!
+      </div>
+    </div>
+  </div>
+  <button id="open-chat" class="chat-float" aria-label="Open Chat">
+    <i data-lucide="message-square"></i>
+  </button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i data-lucide="check-circle"></i>
+    <span id="toastMessage">Message sent successfully!</span>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

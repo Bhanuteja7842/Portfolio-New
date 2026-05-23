@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyFlow Weather — Gundeti Bhanuteja</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="weather-app glass-card">
+    <div class="app-header">
+      <a href="../../index.html#projects" class="back-btn"><i data-lucide="arrow-left"></i> Portfolio</a>
+      <div class="search-bar">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" id="cityInput" placeholder="Search city... (e.g. Karimnagar)" />
+        <button id="searchBtn" class="search-btn">Search</button>
+      </div>
+      <button id="settingsBtn" class="settings-btn" aria-label="Settings"><i data-lucide="settings"></i></button>
+    </div>
+
+    <!-- API Key Settings Modal overlay -->
+    <div class="settings-modal" id="settingsModal" style="display: none;">
+      <div class="modal-content glass-card">
+        <h3>Weather API Settings</h3>
+        <p>By default, this app operates in Mock Engine mode. To fetch real live data, paste an OpenWeatherMap API Key below.</p>
+        <div class="input-group">
+          <label for="apiKey">OpenWeather API Key</label>
+          <input type="password" id="apiKey" placeholder="Paste your API key here..." />
+        </div>
+        <div class="modal-buttons">
+          <button id="saveSettings" class="btn-save">Save Settings</button>
+          <button id="closeSettings" class="btn-cancel">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-body" id="weatherContent">
+      <!-- Main Weather Status -->
+      <div class="current-weather">
+        <div class="location-details">
+          <h2 id="cityName">Karimnagar</h2>
+          <p id="weatherDate">Saturday, May 23, 2026</p>
+        </div>
+        <div class="weather-row">
+          <div class="temp-section">
+            <span class="temp" id="currentTemp">32°C</span>
+            <span class="condition" id="weatherCondition">Sunny & Clear</span>
+          </div>
+          <div class="weather-icon-lg" id="weatherIcon">
+            <i data-lucide="sun" class="sun-glow"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weather Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-box glass-card">
+          <div class="stat-icon"><i data-lucide="droplet"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Humidity</span>
+            <span class="stat-val" id="valHumidity">45%</span>
+          </div>
+        </div>
+        <div class="stat-box glass-card">
+          <div class="stat-icon"><i data-lucide="wind"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Wind Speed</span>
+            <span class="stat-val" id="valWind">12 km/h</span>
+          </div>
+        </div>
+        <div class="stat-box glass-card">
+          <div class="stat-icon"><i data-lucide="thermometer"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Feels Like</span>
+            <span class="stat-val" id="valFeels">35°C</span>
+          </div>
+        </div>
+        <div class="stat-box glass-card">
+          <div class="stat-icon"><i data-lucide="eye"></i></div>
+          <div class="stat-info">
+            <span class="stat-label">Visibility</span>
+            <span class="stat-val" id="valVisibility">10 km</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5-Day Forecast -->
+      <div class="forecast-section">
+        <h3>5-Day Forecast</h3>
+        <div class="forecast-grid" id="forecastGrid">
+          <!-- Dynamically filled with forecast items -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Error State -->
+    <div class="error-state" id="errorState" style="display: none;">
+      <i data-lucide="alert-circle"></i>
+      <p id="errorMessage">City not found. Try searching Karimnagar, Hyderabad, or New York!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

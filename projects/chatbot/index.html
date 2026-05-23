@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether AI Chatbot — Gundeti Bhanuteja</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chatbot-container glass-card">
+    <header class="chat-header">
+      <div class="header-left">
+        <a href="../../index.html#projects" class="back-btn"><i data-lucide="arrow-left"></i> Portfolio</a>
+        <div class="bot-info">
+          <div class="bot-avatar">
+            <i data-lucide="cpu" class="neon-glow"></i>
+            <span class="active-dot"></span>
+          </div>
+          <div>
+            <h2>Aether-v1</h2>
+            <p>Portfolio AI Assistant</p>
+          </div>
+        </div>
+      </div>
+      <button id="clearChat" class="clear-btn" aria-label="Clear chat"><i data-lucide="rotate-ccw"></i></button>
+    </header>
+
+    <div class="chat-messages" id="chatMessages">
+      <!-- Bot welcome message -->
+      <div class="message bot">
+        <div class="msg-avatar"><i data-lucide="cpu"></i></div>
+        <div class="msg-content">
+          <p>Hello! I am <strong>Aether</strong>, Gundeti Bhanuteja's portfolio AI. I can tell you about his programming skills, education, work experience, or explain concepts in web development and cybersecurity! What would you like to know?</p>
+          <span class="msg-time">Just now</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Suggested Actions -->
+    <div class="suggested-queries" id="suggestedQueries">
+      <button class="suggest-btn" data-query="Tell me about Bhanuteja">Who is Bhanuteja?</button>
+      <button class="suggest-btn" data-query="What are his key skills?">What are his skills?</button>
+      <button class="suggest-btn" data-query="Explain fullstack web development">What is Fullstack?</button>
+      <button class="suggest-btn" data-query="Give me a quick cybersecurity/hacking tip">Hacking Tip</button>
+    </div>
+
+    <footer class="chat-input-area">
+      <form id="chatForm">
+        <input type="text" id="userInput" placeholder="Ask Aether something..." required autocomplete="off" />
+        <button type="submit" class="send-btn" aria-label="Send message"><i data-lucide="send"></i></button>
+      </form>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

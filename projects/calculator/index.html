@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator App — Gundeti Bhanuteja</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator-container">
+    <div class="header">
+      <a href="../../index.html#projects" class="back-btn"><i data-lucide="arrow-left"></i> Portfolio</a>
+      <div class="title">NeonCalc</div>
+      <button id="themeToggle" class="theme-toggle"><i data-lucide="moon"></i></button>
+    </div>
+    
+    <div class="display-container">
+      <div class="history-preview" id="historyPreview"></div>
+      <div class="current-expression" id="expression">0</div>
+      <div class="current-result" id="result"></div>
+    </div>
+    
+    <div class="calculator-body">
+      <div class="calc-tabs">
+        <button class="tab-btn active" id="btnStandard">Standard</button>
+        <button class="tab-btn" id="btnScientific">Scientific</button>
+        <button class="tab-btn" id="btnHistory">History</button>
+      </div>
+      
+      <div class="keypad" id="keypad">
+        <!-- Scientific Keys (row 1-2) -->
+        <button class="key sci-key" data-op="sin">sin</button>
+        <button class="key sci-key" data-op="cos">cos</button>
+        <button class="key sci-key" data-op="tan">tan</button>
+        <button class="key sci-key" data-op="log">log</button>
+        <button class="key sci-key" data-op="ln">ln</button>
+        <button class="key sci-key" data-op="pi">π</button>
+        <button class="key sci-key" data-op="e">e</button>
+        <button class="key sci-key" data-op="pow">x<sup>y</sup></button>
+        <button class="key sci-key" data-op="sqrt">√</button>
+        <button class="key sci-key" data-op="exp">Exp</button>
+        
+        <!-- Standard Keys -->
+        <button class="key fn-key" data-op="clear">AC</button>
+        <button class="key fn-key" data-op="backspace"><i data-lucide="delete"></i></button>
+        <button class="key fn-key" data-op="percent">%</button>
+        <button class="key op-key" data-op="div">÷</button>
+        
+        <button class="key num-key" data-val="7">7</button>
+        <button class="key num-key" data-val="8">8</button>
+        <button class="key num-key" data-val="9">9</button>
+        <button class="key op-key" data-op="mul">×</button>
+        
+        <button class="key num-key" data-val="4">4</button>
+        <button class="key num-key" data-val="5">5</button>
+        <button class="key num-key" data-val="6">6</button>
+        <button class="key op-key" data-op="sub">-</button>
+        
+        <button class="key num-key" data-val="1">1</button>
+        <button class="key num-key" data-val="2">2</button>
+        <button class="key num-key" data-val="3">3</button>
+        <button class="key op-key" data-op="add">+</button>
+        
+        <button class="key num-key" data-val="0">0</button>
+        <button class="key num-key" data-val=".">.</button>
+        <button class="key fn-key" data-op="brackets">( )</button>
+        <button class="key eq-key" data-op="equal">=</button>
+      </div>
+
+      <!-- History Panel -->
+      <div class="history-panel" id="historyPanel" style="display: none;">
+        <div class="history-list" id="historyList">
+          <p class="no-history">No history yet</p>
+        </div>
+        <button id="clearHistory" class="clear-history-btn">Clear History</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

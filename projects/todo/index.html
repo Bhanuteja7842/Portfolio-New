@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow To-Do — Gundeti Bhanuteja</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="logo-area">
+        <a href="../../index.html#projects" class="back-btn"><i data-lucide="arrow-left"></i> Portfolio</a>
+        <h2>TaskFlow</h2>
+      </div>
+      
+      <nav class="categories-nav">
+        <h3>Categories</h3>
+        <button class="cat-link active" data-cat="all"><i data-lucide="grid"></i> All Tasks <span class="badge" id="countAll">0</span></button>
+        <button class="cat-link" data-cat="work"><i data-lucide="briefcase"></i> Work <span class="badge" id="countWork">0</span></button>
+        <button class="cat-link" data-cat="personal"><i data-lucide="user"></i> Personal <span class="badge" id="countPersonal">0</span></button>
+        <button class="cat-link" data-cat="study"><i data-lucide="graduation-cap"></i> Study <span class="badge" id="countStudy">0</span></button>
+      </nav>
+
+      <div class="stats-panel glass-card">
+        <h3>Progress Overview</h3>
+        <div class="progress-bar-container">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+        <p class="progress-text"><span id="completedPercentage">0%</span> completed</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <div class="header-left">
+          <h1 id="categoryTitle">All Tasks</h1>
+          <p id="currentDate">Today</p>
+        </div>
+        <button id="themeToggle" class="theme-btn"><i data-lucide="moon"></i></button>
+      </header>
+
+      <section class="task-form-section glass-card">
+        <form id="taskForm">
+          <div class="form-row">
+            <input type="text" id="taskInput" placeholder="Add a new task..." required />
+            <button type="submit" class="btn-add"><i data-lucide="plus"></i> Add Task</button>
+          </div>
+          <div class="form-options">
+            <div class="select-group">
+              <label for="taskCategory"><i data-lucide="folder"></i> Category</label>
+              <select id="taskCategory">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="study">Study</option>
+              </select>
+            </div>
+            
+            <div class="select-group">
+              <label for="taskPriority"><i data-lucide="flag"></i> Priority</label>
+              <select id="taskPriority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+
+            <div class="select-group">
+              <label for="taskDueDate"><i data-lucide="calendar"></i> Due Date</label>
+              <input type="date" id="taskDueDate" />
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="tasks-list-section">
+        <div class="filters-bar">
+          <div class="search-box">
+            <i data-lucide="search"></i>
+            <input type="text" id="searchTask" placeholder="Search tasks..." />
+          </div>
+          <div class="filter-options">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
+        </div>
+
+        <div class="tasks-container" id="tasksContainer">
+          <!-- Tasks dynamically rendered here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

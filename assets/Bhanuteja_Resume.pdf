@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Bhanuteja Resume</title></head>
+<body style="font-family:Arial,sans-serif;max-width:800px;margin:40px auto;padding:20px;color:#333;">
+<h1 style="color:#6366F1;">Bhanuteja</h1>
+<p><strong>BCA Student | Web Developer | AIML Learner</strong></p>
+<p>Email: bhanuteja@example.com | GitHub: github.com/bhanuteja | LinkedIn: linkedin.com/in/bhanuteja</p>
+<hr>
+<h2 style="color:#8B5CF6;">Education</h2>
+<p><strong>BCA — Satavahana University</strong> (2022 - Present)</p>
+<p><strong>Intermediate (MPC)</strong> — State Board (2020 - 2022)</p>
+<p><strong>SSC</strong> — Board of Secondary Education (2020)</p>
+<hr>
+<h2 style="color:#8B5CF6;">Skills</h2>
+<p><strong>Programming:</strong> C, Python, JavaScript</p>
+<p><strong>Web:</strong> HTML, CSS, React, Node.js</p>
+<p><strong>Databases:</strong> MySQL, MongoDB</p>
+<p><strong>Tools:</strong> Git, GitHub, VS Code</p>
+<hr>
+<h2 style="color:#8B5CF6;">Projects</h2>
+<p><strong>Student Management System</strong> — HTML, CSS, JS, Node.js, MySQL</p>
+<p><strong>Calculator App</strong> — HTML, CSS, JavaScript</p>
+<p><strong>Portfolio Website</strong> — HTML, CSS, JavaScript</p>
+<p><strong>To-Do App</strong> — HTML, CSS, JavaScript</p>
+<p><strong>Weather App</strong> — HTML, CSS, JavaScript, API</p>
+<p><strong>AI Chatbot</strong> — Python, AI/ML, NLP</p>
+<hr>
+<h2 style="color:#8B5CF6;">Certificates</h2>
+<p>Python Programming | Web Development | AI & Machine Learning | Hackathon Participant | Data Science Basics</p>
+</body>
+</html>
