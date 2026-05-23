@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== CUSTOM CURSOR ==========
   const cursorDot = document.getElementById('cursorDot');
   const cursorOutline = document.getElementById('cursorOutline');
-  let mouseX = 0, mouseY = 0;
-  let outlineX = 0, outlineY = 0;
+  let mouseX = -100, mouseY = -100;
+  let outlineX = -100, outlineY = -100;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -89,6 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cursorDot) {
       cursorDot.style.left = mouseX + 'px';
       cursorDot.style.top = mouseY + 'px';
+      cursorDot.style.opacity = '1';
+    }
+    if (cursorOutline) {
+      cursorOutline.style.opacity = '1';
     }
   });
 
@@ -103,18 +107,86 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   animateCursor();
 
-  // Cursor hover effects
-  const hoverElements = document.querySelectorAll('a, button, .project-card, .filter-btn, .social-link, input, textarea, .chat-float, .close-chat');
-  hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      if (cursorDot) cursorDot.classList.add('hover');
-      if (cursorOutline) cursorOutline.classList.add('hover');
-    });
-    el.addEventListener('mouseleave', () => {
-      if (cursorDot) cursorDot.classList.remove('hover');
-      if (cursorOutline) cursorOutline.classList.remove('hover');
-    });
+  // Click Feedback
+  document.addEventListener('mousedown', () => {
+    if (cursorDot) cursorDot.classList.add('clicking');
+    if (cursorOutline) cursorOutline.classList.add('clicking');
   });
+
+  document.addEventListener('mouseup', () => {
+    if (cursorDot) cursorDot.classList.remove('clicking');
+    if (cursorOutline) cursorOutline.classList.remove('clicking');
+  });
+
+  // Window boundaries handling
+  document.addEventListener('mouseleave', () => {
+    if (cursorDot) cursorDot.style.opacity = '0';
+    if (cursorOutline) cursorOutline.style.opacity = '0';
+  });
+
+  document.addEventListener('mouseenter', () => {
+    if (cursorDot) cursorDot.style.opacity = '1';
+    if (cursorOutline) cursorOutline.style.opacity = '1';
+  });
+
+  // Dynamic Hover Detection (Event Delegation)
+  document.addEventListener('mouseover', (e) => {
+    const target = e.target;
+    if (!target) return;
+
+    // Reset current classes
+    resetCursorHover();
+
+    // 1. Text Inputs and Caret fields
+    const isInput = target.closest('input, textarea, select, [contenteditable="true"]');
+    if (isInput) {
+      if (cursorDot) cursorDot.classList.add('hover-input');
+      if (cursorOutline) cursorOutline.classList.add('hover-input');
+      return;
+    }
+
+    // 2. Project Card Hover (Morph into capsule view badge)
+    const isCard = target.closest('.project-card');
+    if (isCard) {
+      if (cursorDot) cursorDot.classList.add('hover-card');
+      if (cursorOutline) {
+        cursorOutline.classList.add('hover-card');
+        const cursorText = cursorOutline.querySelector('.cursor-text');
+        if (cursorText) cursorText.textContent = 'View';
+      }
+      return;
+    }
+
+    // 3. Clickable Links and Buttons (Blend mode expansion)
+    const isLink = target.closest('a, button, .social-link, .filter-btn, .chat-float, .close-chat, [role="button"]');
+    if (isLink) {
+      if (cursorDot) cursorDot.classList.add('hover-link');
+      if (cursorOutline) {
+        cursorOutline.classList.add('hover-link');
+        const cursorText = cursorOutline.querySelector('.cursor-text');
+        if (cursorText) cursorText.textContent = 'Lock';
+      }
+      return;
+    }
+  });
+
+  // Reset when leaving window or elements
+  document.addEventListener('mouseout', (e) => {
+    if (!e.relatedTarget) {
+      resetCursorHover();
+    }
+  });
+
+  function resetCursorHover() {
+    if (cursorDot) {
+      cursorDot.classList.remove('hover-link', 'hover-card', 'hover-input');
+    }
+    if (cursorOutline) {
+      cursorOutline.classList.remove('hover-link', 'hover-card', 'hover-input');
+      const cursorText = cursorOutline.querySelector('.cursor-text');
+      if (cursorText) cursorText.textContent = '';
+    }
+  }
 
   // ========== NAVBAR ==========
   const navbar = document.getElementById('navbar');

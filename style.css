@@ -133,47 +133,291 @@ img {
 }
 
 /* ============================================
-   CUSTOM CURSOR
+   CUSTOM CURSOR (GAMING HUD RETICLE)
    ============================================ */
+
+/* Disable default cursor on desktop */
+@media (min-width: 769px) {
+  html, body, a, button, input, textarea, select, label, [role="button"], .project-card, .social-link, .chat-float, .close-chat {
+    cursor: none !important;
+  }
+}
+
+:root {
+  --gaming-cyan: #00f3ff;
+  --gaming-magenta: #ff0055;
+  --gaming-purple: #d900ff;
+}
 
 .cursor-dot {
   position: fixed;
-  width: 8px;
-  height: 8px;
-  background: var(--accent-2);
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--gaming-cyan);
   pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background 0.2s;
+  z-index: 999999;
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  box-shadow: 0 0 8px var(--gaming-cyan);
+  transition: width 0.25s cubic-bezier(0.19, 1, 0.22, 1), 
+              height 0.25s cubic-bezier(0.19, 1, 0.22, 1), 
+              background-color 0.25s, 
+              box-shadow 0.25s,
+              opacity 0.25s,
+              border-radius 0.25s;
 }
 
 .cursor-outline {
   position: fixed;
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(139,92,246,0.4);
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px dashed rgba(0, 243, 255, 0.25);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 99998;
+  z-index: 999998;
   transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: reticle-spin 12s linear infinite;
+  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1), 
+              height 0.4s cubic-bezier(0.19, 1, 0.22, 1), 
+              border-color 0.3s, 
+              background-color 0.3s, 
+              opacity 0.3s;
 }
 
-.cursor-dot.hover {
-  width: 16px;
+/* Corner Reticle Brackets */
+.reticle-bracket {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: var(--gaming-cyan);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reticle-bracket.top-left {
+  top: 0;
+  left: 0;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.reticle-bracket.top-right {
+  top: 0;
+  right: 0;
+  border-top: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+.reticle-bracket.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.reticle-bracket.bottom-right {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+/* Float-down Digital HUD Tag */
+.cursor-text {
+  position: absolute;
+  bottom: -20px;
+  font-family: var(--font-mono);
+  font-size: 7px;
+  font-weight: 700;
+  color: var(--gaming-cyan);
+  opacity: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: opacity 0.3s, color 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Standard Reticle Spin Animation */
+@keyframes reticle-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Fast Reversed Lock-On Spin */
+@keyframes reticle-spin-fast {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* --- Gaming Cursor Interactive States --- */
+
+/* 1. Target Lock-On: Links, Buttons, Nav items */
+.cursor-dot.hover-link {
+  background-color: var(--gaming-magenta);
+  box-shadow: 0 0 10px var(--gaming-magenta);
+  width: 5px;
+  height: 5px;
+}
+
+.cursor-outline.hover-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 0, 85, 0.4);
+  animation: reticle-spin-fast 1.5s linear infinite;
+}
+
+.cursor-outline.hover-link .reticle-bracket {
+  border-color: var(--gaming-magenta);
+}
+
+.cursor-outline.hover-link .reticle-bracket.top-left { top: 2px; left: 2px; }
+.cursor-outline.hover-link .reticle-bracket.top-right { top: 2px; right: 2px; }
+.cursor-outline.hover-link .reticle-bracket.bottom-left { bottom: 2px; left: 2px; }
+.cursor-outline.hover-link .reticle-bracket.bottom-right { bottom: 2px; right: 2px; }
+
+.cursor-outline.hover-link .cursor-text {
+  color: var(--gaming-magenta);
+  opacity: 1;
+}
+
+/* 2. Target Acquire: Project Cards */
+.cursor-dot.hover-card {
+  background-color: var(--gaming-purple);
+  box-shadow: 0 0 10px var(--gaming-purple);
+  width: 8px;
+  height: 8px;
+}
+
+.cursor-outline.hover-card {
+  width: 56px;
+  height: 56px;
+  border: 1px dashed rgba(217, 0, 255, 0.35);
+  animation: reticle-spin 6s linear infinite;
+}
+
+.cursor-outline.hover-card .reticle-bracket {
+  border-color: var(--gaming-purple);
+  width: 9px;
+  height: 9px;
+}
+
+.cursor-outline.hover-card .reticle-bracket.top-left { top: -3px; left: -3px; }
+.cursor-outline.hover-card .reticle-bracket.top-right { top: -3px; right: -3px; }
+.cursor-outline.hover-card .reticle-bracket.bottom-left { bottom: -3px; left: -3px; }
+.cursor-outline.hover-card .reticle-bracket.bottom-right { bottom: -3px; right: -3px; }
+
+.cursor-outline.hover-card .cursor-text {
+  color: var(--gaming-purple);
+  opacity: 1;
+}
+
+/* 3. Text Framing: Input forms */
+.cursor-dot.hover-input {
+  width: 1.5px;
+  height: 12px;
+  border-radius: 0;
+  transform: translate(-50%, -50%); /* Disable 45deg rotate */
+  box-shadow: none;
+  animation: caret-blink 0.8s step-end infinite;
+}
+
+@keyframes caret-blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.cursor-outline.hover-input {
+  width: 32px;
+  height: 20px;
+  border: none;
+  animation: none;
+}
+
+.cursor-outline.hover-input .reticle-bracket {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: 1.5px solid var(--gaming-cyan);
+  border-right: none !important;
   height: 16px;
-  background: var(--accent-3);
+  top: 50% !important;
+  transform: translateY(-50%);
 }
 
-.cursor-outline.hover {
-  width: 50px;
-  height: 50px;
-  border-color: rgba(168,85,247,0.5);
+.cursor-outline.hover-input .reticle-bracket.top-left,
+.cursor-outline.hover-input .reticle-bracket.bottom-left {
+  left: 0;
 }
 
+.cursor-outline.hover-input .reticle-bracket.top-right,
+.cursor-outline.hover-input .reticle-bracket.bottom-right {
+  right: 0;
+  border-right: 1.5px solid var(--gaming-cyan) !important;
+  border-left: none !important;
+}
+
+/* 4. Select Action: Clicking feedback muzzle blast */
+.cursor-dot.clicking {
+  transform: translate(-50%, -50%) rotate(45deg) scale(0.6);
+}
+
+.cursor-outline.clicking {
+  width: 20px;
+  height: 20px;
+  border-color: var(--gaming-magenta);
+}
+
+.cursor-outline.clicking .reticle-bracket {
+  border-color: var(--gaming-magenta);
+}
+
+.cursor-outline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2.5px solid var(--gaming-cyan);
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cursor-outline.clicking::after {
+  animation: hit-ripple 0.35s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes hit-ripple {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+    border-color: var(--gaming-cyan);
+  }
+  40% {
+    border-color: var(--gaming-magenta);
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+    border-color: transparent;
+  }
+}
+
+/* Revert to default cursor on mobile devices */
 @media (max-width: 768px) {
-  .cursor-dot, .cursor-outline { display: none; }
+  html, body, a, button, input, textarea, select, label, [role="button"], .project-card, .social-link, .chat-float, .close-chat {
+    cursor: auto !important;
+  }
+  .cursor-dot, .cursor-outline {
+    display: none !important;
+  }
 }
 
 /* ============================================
